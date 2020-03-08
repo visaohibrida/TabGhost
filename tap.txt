@@ -1,6 +1,7 @@
 Alphinha<3\n
 TatuAlbino\n
+/ragatanga/
 chocolate\n
 pamonha\n
-esquilo\n
+/ragatanga/esquilo\n
 macona\n
