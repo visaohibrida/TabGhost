@@ -1,7 +1,5 @@
-Alphinha<3\n
-TatuAlbino\n
-//ragatanga//
-chocolate\n
-pamonha\n
-//ragatanga//esquilo\n
-macona\n
+#Name#Alphinha<3
+#Pet#TatuAlbino
+#Drink#Coffee
+#Color#Blue
+#Animal#Esquilo
