@@ -1,5 +1,10 @@
-//Name//Alphinha<3
-//Pet//Tatu Albino
-//Drink//Coffee
-//Color//Blue
-//Animal//Esquilo
+//Name//
+Alphinha<3
+//Pet//
+Tatu Albino
+//Drink//
+Coffee
+//Color//
+Blue
+//Animal//
+Esquilo
