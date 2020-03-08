@@ -1,5 +1,5 @@
 #Name#Alphinha<3
-#Pet#TatuAlbino
+#Pet#Tatu Albino
 #Drink#Coffee
 #Color#Blue
 #Animal#Esquilo
