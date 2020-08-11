@@ -1,0 +1,509 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Current/addons/admob-lib/admob.gd" type="Script" id=1]
+[ext_resource path="res://Current/Scenes/Ad/ad.gd" type="Script" id=2]
+[ext_resource path="res://Current/Assets/Images/dot.png" type="Texture" id=3]
+[ext_resource path="res://Current/Scenes/Panel_Admin/PANEL_ADM.gd" type="Script" id=4]
+[ext_resource path="res://Current/Scenes/Menu/Menu.gd" type="Script" id=5]
+[ext_resource path="res://Current/Tres/MenuTres.tres" type="Theme" id=6]
+[ext_resource path="res://Current/Scenes/Menu/Slot.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Current/Scenes/Panel_Admin/JsonRequest.gd" type="Script" id=8]
+[ext_resource path="res://Current/Scenes/Mobs/MobSpawn/Spawn.gd" type="Script" id=9]
+[ext_resource path="res://Current/Assets/Images/Square.png" type="Texture" id=10]
+[ext_resource path="res://Current/Scenes/Nav/NAV.gd" type="Script" id=11]
+[ext_resource path="res://Current/Tres/Nav.tres" type="Theme" id=12]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Current/Assets/Font/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Current/Assets/Font/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = SubResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[sub_resource type="Animation" id=6]
+
+[node name="Main" type="Node2D"]
+scale = Vector2( 1.02074, 1.05475 )
+
+[node name="BG" type="Sprite" parent="."]
+modulate = Color( 0.184314, 0.309804, 0.364706, 1 )
+position = Vector2( 224.193, 521.56 )
+scale = Vector2( 590.971, 1155.62 )
+texture = ExtResource( 3 )
+
+[node name="BG2" type="Sprite" parent="."]
+modulate = Color( 0.207843, 0.352941, 0.419608, 1 )
+position = Vector2( 226.422, 433.997 )
+scale = Vector2( 459, 969 )
+texture = ExtResource( 3 )
+
+[node name="PANEL_ADM" type="Node2D" parent="."]
+position = Vector2( 5.05734, 3.38244 )
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera2D" parent="PANEL_ADM"]
+position = Vector2( 220.964, 456.808 )
+current = true
+
+[node name="BTN_Restart" type="Button" parent="PANEL_ADM"]
+margin_right = 28.0
+margin_bottom = 20.0
+text = "R"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JsonRequest" type="Control" parent="PANEL_ADM"]
+margin_left = 179.079
+margin_top = 218.762
+margin_right = 219.079
+margin_bottom = 258.762
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTP_Army" type="HTTPRequest" parent="PANEL_ADM/JsonRequest"]
+
+[node name="HTTP_Power" type="HTTPRequest" parent="PANEL_ADM/JsonRequest"]
+
+[node name="HTTP_Coin" type="HTTPRequest" parent="PANEL_ADM/JsonRequest"]
+
+[node name="HTTP_AD" type="HTTPRequest" parent="PANEL_ADM/JsonRequest"]
+
+[node name="Label" type="Label" parent="PANEL_ADM/JsonRequest"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="PANEL_ADM/JsonRequest"]
+margin_left = -174.954
+margin_top = -9.7825
+margin_right = -162.954
+margin_bottom = 10.2175
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="PANEL_ADM/JsonRequest"]
+margin_left = -150.993
+margin_top = -10.5728
+margin_right = -138.993
+margin_bottom = 9.4272
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NAV" type="Node2D" parent="."]
+position = Vector2( -77.3748, -9.94374 )
+scale = Vector2( 1.30339, 1.30339 )
+z_index = 4
+script = ExtResource( 11 )
+
+[node name="Nav_Control" type="Control" parent="NAV"]
+margin_left = 222.407
+margin_top = 46.6799
+margin_right = 262.407
+margin_bottom = 86.6799
+rect_scale = Vector2( 0.879737, 0.879737 )
+theme = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="NAV/Nav_Control"]
+modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+position = Vector2( 12.0106, 12.8447 )
+scale = Vector2( 8.38255, 1.1284 )
+texture = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="NAV/Nav_Control"]
+modulate = Color( 0.156863, 0.156863, 0.156863, 1 )
+position = Vector2( 12.0106, 12.8447 )
+scale = Vector2( 1.77186, 1.60582 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="NAV/Nav_Control"]
+anchor_left = 5.637
+anchor_top = 1.412
+anchor_right = 5.637
+anchor_bottom = 1.412
+margin_left = -250.107
+margin_top = -76.7222
+margin_right = -177.107
+margin_bottom = -11.7222
+theme = ExtResource( 12 )
+custom_fonts/font = SubResource( 2 )
+text = "955"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="NAV/Nav_Control"]
+anchor_left = 5.637
+anchor_top = 1.412
+anchor_right = 5.638
+anchor_bottom = 1.412
+margin_left = -391.955
+margin_top = -76.2776
+margin_right = -294.995
+margin_bottom = -10.2776
+theme = ExtResource( 12 )
+custom_fonts/font = SubResource( 4 )
+text = "Player21"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AD" type="Node2D" parent="."]
+position = Vector2( -8.15529, 87.9432 )
+script = ExtResource( 2 )
+
+[node name="Button_AD" type="Node2D" parent="AD"]
+
+[node name="showBanner" type="Button" parent="AD/Button_AD"]
+margin_left = 14.5
+margin_top = 39.5
+margin_right = 79.5
+margin_bottom = 59.5
+text = "BANNER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="showInter" type="Button" parent="AD/Button_AD"]
+margin_left = 14.6385
+margin_top = 64.0685
+margin_right = 66.6385
+margin_bottom = 84.0685
+text = "INNER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="showV" type="Button" parent="AD/Button_AD"]
+margin_left = 14.79
+margin_top = 89.2019
+margin_right = 67.79
+margin_bottom = 109.202
+text = "VIDEO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Admob" type="Node" parent="AD"]
+script = ExtResource( 1 )
+banner_on_top = false
+banner_id = "ca-app-pub-3940256099942544/6300978111"
+interstitial_id = "ca-app-pub-3940256099942544/1033173712"
+rewarded_id = "ca-app-pub-3940256099942544/5224354917"
+child_directed = true
+max_ad_content_rate = "G"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="MENU" type="Node2D" parent="."]
+position = Vector2( -12.0944, 414.335 )
+z_index = 3
+
+[node name="Menu" type="KinematicBody2D" parent="MENU"]
+position = Vector2( -0.715064, 675.522 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MENU/Menu"]
+position = Vector2( 220.18, 41.0026 )
+scale = Vector2( 1, 1.00049 )
+shape = SubResource( 5 )
+disabled = true
+
+[node name="TabContainer2" type="TabContainer" parent="MENU/Menu"]
+margin_left = 34.0
+margin_top = -283.0
+margin_right = 444.0
+margin_bottom = 217.0
+rect_min_size = Vector2( 0, 500 )
+rect_clip_content = true
+size_flags_vertical = 0
+theme = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": "
+"
+}
+
+[node name="Panel" type="Panel" parent="MENU/Menu/TabContainer2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 22.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MENU/Menu/TabContainer2/Panel"]
+margin_left = 10.0
+margin_top = 1.0
+margin_right = 391.0
+margin_bottom = 261.0
+theme = ExtResource( 6 )
+follow_focus = true
+scroll_horizontal_enabled = false
+scroll_deadzone = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer"]
+margin_right = 380.0
+margin_bottom = 900.0
+rect_min_size = Vector2( 0, 900 )
+mouse_filter = 2
+
+[node name="Shapes" type="GridContainer" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer"]
+margin_right = 380.0
+margin_bottom = 291.0
+grow_horizontal = 0
+grow_vertical = 0
+custom_constants/vseparation = 5
+custom_constants/hseparation = 0
+
+[node name="L" type="GridContainer" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes"]
+margin_right = 380.0
+margin_bottom = 291.0
+
+[node name="TextureRect" type="TextureRect" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L"]
+margin_right = 380.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 380, 55 )
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Slot" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L/TextureRect" instance=ExtResource( 7 )]
+
+[node name="TextureRect2" type="TextureRect" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L"]
+margin_top = 59.0
+margin_right = 380.0
+margin_bottom = 114.0
+rect_min_size = Vector2( 350, 55 )
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Slot" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L/TextureRect2" instance=ExtResource( 7 )]
+
+[node name="TextureRect3" type="TextureRect" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L"]
+margin_top = 118.0
+margin_right = 380.0
+margin_bottom = 173.0
+rect_min_size = Vector2( 350, 55 )
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Slot" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L/TextureRect3" instance=ExtResource( 7 )]
+
+[node name="TextureRect4" type="TextureRect" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L"]
+margin_top = 177.0
+margin_right = 380.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 350, 55 )
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Slot" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L/TextureRect4" instance=ExtResource( 7 )]
+
+[node name="TextureRect5" type="TextureRect" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L"]
+margin_top = 236.0
+margin_right = 380.0
+margin_bottom = 291.0
+rect_min_size = Vector2( 350, 55 )
+texture = ExtResource( 3 )
+stretch_mode = 1
+
+[node name="Slot" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L/TextureRect5" instance=ExtResource( 7 )]
+
+[node name="Sprite" type="Sprite" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer"]
+visible = false
+position = Vector2( 188.079, 33.1849 )
+scale = Vector2( 374.123, 51.3968 )
+texture = ExtResource( 3 )
+
+[node name="Panel2" type="Panel" parent="MENU/Menu/TabContainer2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 22.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MENU/Menu/TabContainer2/Panel2"]
+anchor_bottom = 0.344
+margin_left = 5.2973
+margin_top = 63.5678
+margin_right = 45.2973
+margin_bottom = 103.568
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="MENU/Menu/TabContainer2/Panel2/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 20.0
+
+[node name="Panel3" type="Panel" parent="MENU/Menu/TabContainer2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 22.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MENU/Menu/TabContainer2/Panel3"]
+anchor_bottom = 0.344
+margin_left = 5.2973
+margin_top = 63.5678
+margin_right = 45.2973
+margin_bottom = 103.568
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="MENU/Menu/TabContainer2/Panel3/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 20.0
+
+[node name="Panel4" type="Panel" parent="MENU/Menu/TabContainer2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 22.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MENU/Menu/TabContainer2/Panel4"]
+anchor_bottom = 0.344
+margin_left = 5.2973
+margin_top = 63.5678
+margin_right = 45.2973
+margin_bottom = 103.568
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="MENU/Menu/TabContainer2/Panel4/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 20.0
+
+[node name="Panel5" type="Panel" parent="MENU/Menu/TabContainer2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 22.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MENU/Menu/TabContainer2/Panel5"]
+anchor_bottom = 0.344
+margin_left = 5.2973
+margin_top = 63.5678
+margin_right = 45.2973
+margin_bottom = 103.568
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="MENU/Menu/TabContainer2/Panel5/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 20.0
+
+[node name="Anim" type="AnimationPlayer" parent="MENU/Menu"]
+anims/Up = SubResource( 6 )
+
+[node name="Timer_Down" type="Timer" parent="MENU/Menu"]
+
+[node name="Timer_Up" type="Timer" parent="MENU/Menu"]
+
+[node name="ButtonU" type="Button" parent="MENU/Menu"]
+margin_left = 506.581
+margin_top = -299.602
+margin_right = 521.581
+margin_bottom = -274.602
+rect_scale = Vector2( -35.3324, 3.57269 )
+toggle_mode = true
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="MENU"]
+modulate = Color( 0, 0.32549, 0.415686, 1 )
+position = Vector2( 237.411, 473.847 )
+scale = Vector2( 588.221, 60 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="MENU"]
+margin_left = 10.678
+margin_top = 444.439
+margin_right = 160.678
+margin_bottom = 464.439
+rect_scale = Vector2( 3, 3 )
+text = "TRY KNITO"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mob" type="Node2D" parent="."]
+
+[node name="Spawn" type="Node2D" parent="Mob"]
+position = Vector2( -8.81713, 121.356 )
+script = ExtResource( 9 )
+[connection signal="request_completed" from="PANEL_ADM/JsonRequest/HTTP_Army" to="PANEL_ADM/JsonRequest" method="_on_HTTP_Army_request_completed"]
+[connection signal="request_completed" from="PANEL_ADM/JsonRequest/HTTP_Power" to="PANEL_ADM/JsonRequest" method="_on_HTTP_Power_request_completed"]
+[connection signal="request_completed" from="PANEL_ADM/JsonRequest/HTTP_Coin" to="PANEL_ADM/JsonRequest" method="_on_HTTP_Coin_request_completed"]
+[connection signal="request_completed" from="PANEL_ADM/JsonRequest/HTTP_AD" to="PANEL_ADM/JsonRequest" method="_on_HTTP_AD_request_completed"]
+[connection signal="pressed" from="PANEL_ADM/JsonRequest/Button" to="PANEL_ADM/JsonRequest" method="_on_Button_pressed"]
+[connection signal="pressed" from="PANEL_ADM/JsonRequest/Button2" to="PANEL_ADM/JsonRequest" method="_on_Button2_pressed"]
+[connection signal="timeout" from="MENU/Menu/Timer_Down" to="MENU/Menu" method="_on_Timer_Down_timeout"]
+[connection signal="timeout" from="MENU/Menu/Timer_Up" to="MENU/Menu" method="_on_Timer_Up_timeout"]
+[connection signal="button_down" from="MENU/Menu/ButtonU" to="MENU/Menu" method="_on_Button_button_down"]
+[connection signal="button_up" from="MENU/Menu/ButtonU" to="MENU/Menu" method="_on_Button_button_up"]
+[connection signal="pressed" from="MENU/Menu/ButtonU" to="MENU/Menu" method="_on_Button_pressed"]
+[connection signal="toggled" from="MENU/Menu/ButtonU" to="MENU/Menu" method="_on_Button_toggled"]

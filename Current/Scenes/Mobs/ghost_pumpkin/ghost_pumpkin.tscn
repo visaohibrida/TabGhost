@@ -1,0 +1,336 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Current/Scenes/Mobs/ghost_base/ghost.gd" type="Script" id=1]
+[ext_resource path="res://Current/Scenes/Mobs/ghost_base/eye_pain.png" type="Texture" id=2]
+[ext_resource path="res://Current/Scenes/Mobs/ghost_base/ghost_eye.png" type="Texture" id=3]
+[ext_resource path="res://Current/Scenes/Mobs/ghost_base/ghost_eyeb.png" type="Texture" id=4]
+[ext_resource path="res://Current/Scenes/Mobs/ghost_pumpkin/Ghost_Pumpking_Body.png" type="Texture" id=5]
+[ext_resource path="res://Current/Scenes/Mobs/ghost_base/GhostStatus.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Current/Scenes/Mobs/ghost_base/Sound.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Current/Scenes/Mobs/ghost_pumpkin/Ghost_Pumpking_Caule.png" type="Texture" id=8]
+[ext_resource path="res://Current/Scenes/Mobs/ghost_pumpkin/Ghost_Pumpking_Leaf.png" type="Texture" id=9]
+[ext_resource path="res://Current/Scenes/Mobs/ghost_base/Button.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Pain"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 50, 50 ), Vector2( 50, 100 ), Vector2( 50, 50 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Eye:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Eye2:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 14.9285, 14.9285 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 2 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Eye2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 280.449, 360.298 ), Vector2( 280.449, 374.69 ), Vector2( 280.449, 360.298 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Eye:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 180.003, 360.298 ), Vector2( 180.003, 374.69 ), Vector2( 180.003, 360.298 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Eye_B:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 231.205, 360.69 ), Vector2( 231.205, 374.69 ), Vector2( 231.205, 360.69 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 231.922, 420.478 ), Vector2( 231.922, 434.478 ), Vector2( 231.922, 420.478 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Top:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 14 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "dead"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "ghost_pumpkin" ],
+"method": "ghost_dead"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 50, 50 ), Vector2( 50, 100 ), Vector2( 50, 50 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Eye:texture")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 6.27667, 1.51572 ),
+"update": 0,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Eye2:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 14.9285, 90.5095 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Eye2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 280.449, 360.69 ), Vector2( 280.449, 378.69 ), Vector2( 280.449, 360.69 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Eye:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 180.003, 360.69 ), Vector2( 180.003, 378.69 ), Vector2( 180.003, 360.69 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Eye_B:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 231.205, 360.69 ), Vector2( 231.205, 374.69 ), Vector2( 231.205, 360.69 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 231.922, 420.478 ), Vector2( 231.922, 434.478 ), Vector2( 231.922, 420.478 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Top:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 14 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Eye:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 180.003, 365.298 ), Vector2( 180.003, 370.298 ), Vector2( 180.003, 365.298 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Eye2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 280.449, 365.298 ), Vector2( 280.449, 370.298 ), Vector2( 280.449, 365.298 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Eye:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 59.7141 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Eye2:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 61.8199 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+
+[node name="Ghost_pumpkin" type="KinematicBody2D"]
+position = Vector2( 50, 50 )
+scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 1 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 231.922, 420.478 )
+texture = ExtResource( 5 )
+
+[node name="Eye_B" type="Sprite" parent="."]
+modulate = Color( 0.764706, 0.501961, 0.00392157, 1 )
+position = Vector2( 231.205, 360.69 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="Eye" type="Sprite" parent="."]
+position = Vector2( 180.003, 360.298 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+
+[node name="Eye2" type="Sprite" parent="."]
+position = Vector2( 280.449, 360.298 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+
+[node name="Top" type="Node2D" parent="."]
+
+[node name="Caule" type="Sprite" parent="Top"]
+position = Vector2( 243.439, 248.48 )
+texture = ExtResource( 8 )
+
+[node name="Leaf" type="Sprite" parent="Top"]
+position = Vector2( 210.331, 204.777 )
+texture = ExtResource( 9 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/Pain = SubResource( 2 )
+anims/dead = SubResource( 3 )
+anims/default = SubResource( 4 )
+anims/eye = SubResource( 5 )
+
+[node name="Sound" parent="." instance=ExtResource( 7 )]
+
+[node name="GhostStatus" parent="." instance=ExtResource( 6 )]
+
+[node name="Button" parent="." instance=ExtResource( 10 )]

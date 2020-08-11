@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/swish_4.wav-3992da36909debe8b660dc0174cbb4ff.sample"
+
+[deps]
+
+source_file="res://Current/Assets/Audio/Effects/swish_4.wav"
+dest_files=[ "res://.import/swish_4.wav-3992da36909debe8b660dc0174cbb4ff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

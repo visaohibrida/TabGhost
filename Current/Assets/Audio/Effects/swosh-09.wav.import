@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/swosh-09.wav-629feaf3d26684e5b110187de6642683.sample"
+
+[deps]
+
+source_file="res://Current/Assets/Audio/Effects/swosh-09.wav"
+dest_files=[ "res://.import/swosh-09.wav-629feaf3d26684e5b110187de6642683.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

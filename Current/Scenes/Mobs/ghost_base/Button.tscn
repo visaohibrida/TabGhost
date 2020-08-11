@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[node name="Button" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 69.0
+margin_top = 214.0
+margin_right = 105.0
+margin_bottom = 628.0
+rect_scale = Vector2( 8.78847, 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+toggle_mode = true
+action_mode = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}

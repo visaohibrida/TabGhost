@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Current/Assets/Audio/Effects/swish_2.wav" type="AudioStream" id=1]
+
+[node name="Sound" type="Node2D"]
+position = Vector2( -62.5, -62.5 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="Dead" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -3.8147e-06, -3.8147e-06 )
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="TapSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -3.8147e-06, -3.8147e-06 )
+stream = ExtResource( 1 )
