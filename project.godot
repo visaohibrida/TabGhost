@@ -599,6 +599,7 @@ G="*res://Current/Scenes/Global/Global.gd"
 Spawn="*res://Current/Scenes/Mobs/MobSpawn/Spawn.gd"
 F="*res://Current/Scripts/functions.gd"
 RemoteSpawner="*res://addons/replicator/RemoteSpawner.gd"
+CheckVersion="*res://Current/Scenes/Main/check_version.gd"
 
 [display]
 
@@ -611,7 +612,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "copy_transform", "explore-editor-theme", "replicator", "time-tracker", "zylann.translation_editor" )
+enabled=PoolStringArray( "copy_transform", "explore-editor-theme", "replicator", "ridiculous_coding", "time-tracker", "zylann.translation_editor" )
 
 [input_devices]
 

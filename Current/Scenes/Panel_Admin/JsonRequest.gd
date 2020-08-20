@@ -1,10 +1,11 @@
 extends Control
+var check_version = {}
 var tab_power = {}
 var tab_coin = {}
 var tab_ad = {}
 var tab_army = {}
- 
 var tab
+var temp = false
 func _on_Button_pressed():
 	$HTTP_Army.request("https://visaohibrida.github.io/tapmonster/j/Army.json")
 #	$HTTP_Power.request("https://visaohibrida.github.io/tapmonster/j/Power.json")
@@ -32,6 +33,12 @@ func _on_HTTP_AD_request_completed(result, response_code, headers, body):
 #	tab_army = json.result
 #	G.tabs = tab_army
 	pass
-
+	
+func _ready():
+	temp = false
 func _process(delta):
+	if temp == true:
+		temp = false
 	pass
+
+ 

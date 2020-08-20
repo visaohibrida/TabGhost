@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Current/addons/admob-lib/admob.gd" type="Script" id=1]
 [ext_resource path="res://Current/Scenes/Ad/ad.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Current/Assets/Images/Square.png" type="Texture" id=10]
 [ext_resource path="res://Current/Scenes/Nav/NAV.gd" type="Script" id=11]
 [ext_resource path="res://Current/Tres/Nav.tres" type="Theme" id=12]
+[ext_resource path="res://Current/Scenes/Main/Main.gd" type="Script" id=13]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Current/Assets/Font/Roboto-Regular.ttf"
@@ -33,6 +34,7 @@ font_data = SubResource( 3 )
 
 [node name="Main" type="Node2D"]
 scale = Vector2( 1.02074, 1.05475 )
+script = ExtResource( 13 )
 
 [node name="BG" type="Sprite" parent="."]
 modulate = Color( 0.184314, 0.309804, 0.364706, 1 )
@@ -41,9 +43,23 @@ scale = Vector2( 590.971, 1155.62 )
 texture = ExtResource( 3 )
 
 [node name="BG2" type="Sprite" parent="."]
-modulate = Color( 0.207843, 0.352941, 0.419608, 1 )
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 226.422, 433.997 )
 scale = Vector2( 459, 969 )
+texture = ExtResource( 3 )
+
+[node name="BG3" type="Sprite" parent="."]
+modulate = Color( 0.207843, 0.419608, 0.356863, 1 )
+position = Vector2( 4.73025, 339.038 )
+rotation = 0.464179
+scale = Vector2( 459, 1170.42 )
+texture = ExtResource( 3 )
+
+[node name="BG4" type="Sprite" parent="."]
+modulate = Color( 0.686275, 0.4, 0.027451, 1 )
+position = Vector2( 426.007, 544.689 )
+rotation = 0.464179
+scale = Vector2( 459, 1170.42 )
 texture = ExtResource( 3 )
 
 [node name="PANEL_ADM" type="Node2D" parent="."]
@@ -71,6 +87,9 @@ script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="http_request" type="HTTPRequest" parent="PANEL_ADM/JsonRequest"]
+timeout = 1
 
 [node name="HTTP_Army" type="HTTPRequest" parent="PANEL_ADM/JsonRequest"]
 
@@ -134,7 +153,7 @@ position = Vector2( 12.0106, 12.8447 )
 scale = Vector2( 1.77186, 1.60582 )
 texture = ExtResource( 10 )
 
-[node name="Label" type="Label" parent="NAV/Nav_Control"]
+[node name="player_level" type="Label" parent="NAV/Nav_Control"]
 anchor_left = 5.637
 anchor_top = 1.412
 anchor_right = 5.637
@@ -307,6 +326,10 @@ texture = ExtResource( 3 )
 stretch_mode = 1
 
 [node name="Slot" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L/TextureRect2" instance=ExtResource( 7 )]
+margin_left = 4.15169
+margin_top = -8.03571
+margin_right = 4.15169
+margin_bottom = -8.03571
 
 [node name="TextureRect3" type="TextureRect" parent="MENU/Menu/TabContainer2/Panel/ScrollContainer/VBoxContainer/Shapes/L"]
 margin_top = 118.0
@@ -495,12 +518,13 @@ __meta__ = {
 [node name="Spawn" type="Node2D" parent="Mob"]
 position = Vector2( -8.81713, 121.356 )
 script = ExtResource( 9 )
+[connection signal="request_completed" from="PANEL_ADM/JsonRequest/http_request" to="." method="_on_http_request_request_completed"]
 [connection signal="request_completed" from="PANEL_ADM/JsonRequest/HTTP_Army" to="PANEL_ADM/JsonRequest" method="_on_HTTP_Army_request_completed"]
 [connection signal="request_completed" from="PANEL_ADM/JsonRequest/HTTP_Power" to="PANEL_ADM/JsonRequest" method="_on_HTTP_Power_request_completed"]
 [connection signal="request_completed" from="PANEL_ADM/JsonRequest/HTTP_Coin" to="PANEL_ADM/JsonRequest" method="_on_HTTP_Coin_request_completed"]
 [connection signal="request_completed" from="PANEL_ADM/JsonRequest/HTTP_AD" to="PANEL_ADM/JsonRequest" method="_on_HTTP_AD_request_completed"]
 [connection signal="pressed" from="PANEL_ADM/JsonRequest/Button" to="PANEL_ADM/JsonRequest" method="_on_Button_pressed"]
-[connection signal="pressed" from="PANEL_ADM/JsonRequest/Button2" to="PANEL_ADM/JsonRequest" method="_on_Button2_pressed"]
+[connection signal="pressed" from="PANEL_ADM/JsonRequest/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="timeout" from="MENU/Menu/Timer_Down" to="MENU/Menu" method="_on_Timer_Down_timeout"]
 [connection signal="timeout" from="MENU/Menu/Timer_Up" to="MENU/Menu" method="_on_Timer_Up_timeout"]
 [connection signal="button_down" from="MENU/Menu/ButtonU" to="MENU/Menu" method="_on_Button_button_down"]
